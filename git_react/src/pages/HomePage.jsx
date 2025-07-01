@@ -4,7 +4,7 @@ import ProductList from '../component/ProductList'
 const HomePage = ()=>{
     const navigate = useNavigate();
     const handleViewDetail = (productID)=>{
-        navigate('/product/${productID}');
++         navigate(`/product/${productID}`);
     }
 
     return (

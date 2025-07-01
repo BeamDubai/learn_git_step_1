@@ -1,17 +1,18 @@
 import { useEffect , useState } from "react";
-import {api} from '../services/api'
+import {api} from '../services/api';
 
 export const useProducts = () => {
-    const [ products ,setProduct] = useState([]);
+    const [ products ,setProducts] = useState([]);
         const [loading ,setLoading] = useState(true);
-        const [erroe ,setError] = useState(null);
+        const [error ,setError] = useState(null);
 
         useEffect(()=>{
             const featchProducts = async () =>{
                 try {
                     setLoading(true);
                     const data = await api.getProducts();
-                    setProducts(data.product);
+                    {  console.log(data.products);  }
+                    setProducts(data.products);
                 } catch (error) {
                     setError(error.message);
                 }
